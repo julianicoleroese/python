@@ -10,7 +10,7 @@ def jogar_adivinhacao():
     pontos = 1000
         
     print (f"Bem vindo ao Jogo da adivinhação - Nível {nivel}")
-    print (f"Tente adivinha o número que estou pensando, entre 1 e {max_numero}.")
+    print (f"Tente adivinhar o número que estou pensando, entre 1 e {max_numero}.")
         
     for tentativa in range (1, tentativas + 1):
         print (f"Tentativa {tentativa} de {tentativas}")
