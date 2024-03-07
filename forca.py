@@ -1,3 +1,5 @@
+import jogos
+
 def jogar():    
     palavra_secreta = "pindamonhangaba"
     letras_acertadas = ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"]
@@ -21,7 +23,9 @@ def jogar():
     if "_" not in letras_acertadas:
         print("Parabéns você ganhou!")
     else:
-        print(f"Você perdeu piazinho, a palavra era {palavra_secreta}")
+        print(f"Você perdeu songomongo, a palavra era {palavra_secreta}")
 
-id(__name__ == "__main__"):
+    jogos.escolhe_jogo()
+
+if(__name__ == "__main__"):
     jogar()

@@ -1,11 +1,12 @@
 import forca
 import adivinhacao
 
-def escolha_jogos():
+def escolhe_jogo():
 
     print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     print("=-Escolha o Jogo-=")
     print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+
     print("(1)Forca,(2)Adivinhacão")
 
     jogo = int(input("Selecione o Jogo:"))
