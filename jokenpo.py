@@ -23,6 +23,8 @@ def jogar_jokenpo():
             (escolha_jogador=="tesoura" and escolha_computador =="papel") 
         ):
             print("Você ganhou")
+        else:
+            print("Você perdeu!")
 
         jogar_novamente = input("Deseja jogar novamente?").lower()
         if jogar_novamente != "sim":
