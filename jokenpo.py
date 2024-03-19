@@ -1,6 +1,8 @@
 import random
 
 def jogar_jokenpo():
+    vitorias = 0
+    derrotas = 0
     opcoes = ["pedra","papel","tesoura"]
     print("Bem-vindo ao jogo Jokenpô!")
     print("Escolha um: pedra, papel ou tesoura.")
@@ -22,10 +24,13 @@ def jogar_jokenpo():
             (escolha_jogador=="pedra" and escolha_computador =="tesoura") or
             (escolha_jogador=="tesoura" and escolha_computador =="papel") 
         ):
+            vitorias += 1
             print("Você ganhou")
         else:
+            derrotas += 1
             print("Você perdeu!")
 
+        print(f"Você tem {vitorias} vitórias, e {derrotas} derrotas.")
         jogar_novamente = input("Deseja jogar novamente?").lower()
         if jogar_novamente != "sim":
             break 
