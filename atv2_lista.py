@@ -23,7 +23,7 @@ def carregarLista(lista):
         print("Ocorreu um erro",e)
 
 def ordernarLista(lista):
-    lista.sort()
+    lista.sort(reversed = True)
     print("Lista ordenada com sucesso")
 
 def adicionarItem(lista):
@@ -50,7 +50,8 @@ def main():
         print("3 - Exibir lista")
         print("4 - Gravar lista")
         print("5 - Carregar Lista")
-        print("6 - Sair")
+        print("6 - Ordernar Lista")
+        print("7 - Sair")
 
 
         opcao = input("Digite o número da opção que voce deseja: ")
@@ -66,6 +67,8 @@ def main():
         elif opcao == "5":
             carregarLista(lista)
         elif opcao == "6":
+            ordernarLista(lista)
+        elif opcao == "7":
             break
         else:
             print("Opção inválida. Digite novamente.")
