@@ -22,6 +22,9 @@ def carregarLista(lista):
     except Exception as e:
         print("Ocorreu um erro",e)
 
+def ordernarLista(lista):
+    lista.sort()
+    print("Lista ordenada com sucesso")
 
 def adicionarItem(lista):
     item = input("Digite algo que deseja adicionar na sua linda lista: ")
