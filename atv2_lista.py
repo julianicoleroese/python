@@ -1,51 +1,56 @@
-def adicionarItem(lista):
-    item = input("Digite oque deseja adicionar: ")
-    lista.append(item)
-    print("Item adicionado.")
-    exibirLista(lista)
-
-def excluirItem(lista):
-    item = input("Digite oque deseja excluir: ")
-    if item in lista:
-        lista.remove(item)
-        print("Item removido.")
-    else:
-        print("Não está na lista.")
-    exibirLista(lista)
-
-def exibirLista(lista):
-    print("Atual Lista:", lista)
+def mostrarLista(lista):
+    print("Sua lista atual é essa: ", lista)
 
 def gravarLista(lista):
-    nomeArquivo = input("Digite o nome do arquivo")
-    with open(nome_arg,"w") as arquivo 
+    nome_arq = input("Digite o nome do arquivo:")
+    with open (nome_arq, "w") as arquivo:
+        for item in lista:
+            arquivo.write(item + "/n")
+    print("Gravado com sucesso!", nome_arq)
 
+def adicionarItem(lista):
+    item = input("Digite algo que deseja adicionar na sua linda lista: ")
+    lista.append(item)
+    mostrarLista(lista)
+
+def excluirItem(lista):
+    item = input("Digite o item que voce deseja excluir da sua lista: ")
+    if item in lista:
+        lista.remove(item)
+        mostrarLista(lista)
+    else:
+        print("Erro. Este item não consta em sua lista")
 
 def main():
     lista = []
-    while True:
-        print("=== OPÇÕES DA LISTA ===")
-        print("1. ADICIONAR ITEM.")
-        print("2. EXCLUIR ITEM.")
-        print("3. EXIBIR LISTA.")
-        print("4. GRAVAR LISTA")
-        print("5. SAIR.")
 
-        opcao = input("Escolha uma opção: ")
+    while True:
+        print("Escolha uma das opções abaixo:")
+        print("1 - Adicionar item")
+        print("2 - Excluir item")
+        print("3 - Exibir lista")
+        print("4 - Gravar lista")
+        print("5 - Sair")
+
+
+        opcao = input("Digite o número da opção que voce deseja: ")
 
         if opcao == "1":
             adicionarItem(lista)
         elif opcao == "2":
             excluirItem(lista)
         elif opcao == "3":
-            exibirLista(lista)
+            mostrarLista(lista)
         elif opcao == "4":
             gravarLista(lista)
         elif opcao == "5":
-            print("Tchau.")
             break
         else:
-            print("Número inválido, tente novamente.")
+            print("Opção inválida. Digite novamente.")
+
+        print()
+
+    print("Fim da lista.")
 
 if __name__ == "__main__":
     main()
