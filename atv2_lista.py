@@ -8,6 +8,21 @@ def gravarLista(lista):
             arquivo.write(item + "/n")
     print("Gravado com sucesso!", nome_arq)
 
+def carregarLista(lista):
+    nome_arq = input("Digite o nome do arquivo para carregar a lista:")
+    try:
+        with open (nome_arq, "r") as arquivo:
+            lista.clear()
+            for linha in arquivo:
+                lista.append(linha.strip())
+        print("Lista carregada com sucesso", nome_arq)
+
+    except FileNotFoundError:
+        print("O arquivo não foi encontrado.")
+    except Exception as e:
+        print("Ocorreu um erro",e)
+
+
 def adicionarItem(lista):
     item = input("Digite algo que deseja adicionar na sua linda lista: ")
     lista.append(item)
@@ -21,6 +36,7 @@ def excluirItem(lista):
     else:
         print("Erro. Este item não consta em sua lista")
 
+
 def main():
     lista = []
 
@@ -30,7 +46,8 @@ def main():
         print("2 - Excluir item")
         print("3 - Exibir lista")
         print("4 - Gravar lista")
-        print("5 - Sair")
+        print("5 - Carregar Lista")
+        print("6 - Sair")
 
 
         opcao = input("Digite o número da opção que voce deseja: ")
@@ -44,6 +61,8 @@ def main():
         elif opcao == "4":
             gravarLista(lista)
         elif opcao == "5":
+            carregarLista(lista)
+        elif opcao == "6":
             break
         else:
             print("Opção inválida. Digite novamente.")
